@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="post">{% csrf_token %}
+        <b>{{ post.title }}</b>
+        <p>{{ post.body }}</p>
+    </form>
+    <a href="{% url 'updat' post.pk %}">Tahrirlash</a>
+    <a href="{% url 'delet' post.pk %}">O'chirish</a>
+{% endblock content %}
